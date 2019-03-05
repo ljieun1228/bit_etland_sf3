@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
     <div class="grid-item" id="footer">
     <h5>COPYRIGHT © JIEUN_LEE. ALL RIGHTS RESERVED.</h5>
+    <P>   ${time} </P>
+    
     </div>
 </div> 
 </body>
