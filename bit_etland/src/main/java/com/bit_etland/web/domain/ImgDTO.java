@@ -1,8 +1,10 @@
 package com.bit_etland.web.domain;
 
+import org.springframework.stereotype.Component;
+
 import lombok.Data;
 
-@Data
+@Data @Component
 public class ImgDTO {
 	private String imgSeq, imgName, imgExtention, owner;
 

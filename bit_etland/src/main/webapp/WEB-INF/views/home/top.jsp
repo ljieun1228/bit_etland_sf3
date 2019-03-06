@@ -26,5 +26,5 @@
 <body>
 	<div id="wrapper" class="grid-container container-fluid">
 		<div class="grid-item" id="header">
-		<img src="/BitShop/resources/img/LOGO.PNG">
+		<img src="/bit_etland/src/main/webapp/resources/img/LOGO.PNG">
 </div>
