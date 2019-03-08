@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
-<jsp:include page="../home/top.jsp"/>
+
 <link rel="stylesheet" href="${css}/employee/access.css" />
 
 <div class="grid-item" id= "side_bar">
@@ -13,12 +13,12 @@
 
 	<div class="input-group">
 	  <span class="input-group-addon" id="basic-addon1">아이디 </span>
-	  <input type="text" id="custId" name="custId" class="form-control" placeholder="아이디를 입력하세요" aria-describedby="basic-addon1" value="test">
+	  <input type="text" id="customerId" name="customerId" class="form-control" placeholder="아이디를 입력하세요" aria-describedby="basic-addon1" value="test">
 	</div><br />
 	
 	<div class="input-group">
 	  <span class="input-group-addon" id="basic-addon1">비밀번호</span>
-	  <input type="text" id="custPw" name="custPw"  class="form-control" placeholder="비밀번호를 입력하세요" aria-describedby="basic-addon1" value="password">
+	  <input type="text" id="customerPw" name="customerPw"  class="form-control" placeholder="비밀번호를 입력하세요" aria-describedby="basic-addon1" value="password">
 	</div><br />	   
 	 
 	<button type="button" id = "confirm_btn" class="btn btn-default btn-lg">
@@ -35,13 +35,12 @@
 	</div>
 </form>
 </div>
-<jsp:include page="../home/bottom.jsp"/>
+
 <script>
 $('#confirm_btn').click(()=>{
-	var empno = $('#empno').val();
-	var name = $('#name').val();
-	$('#form')
-	.attr('action', '${ctx}/customer.do')
+	$('#form').
+	.attr('method','POST')
+	.attr('action', '${ctx}/customer/signin')
 	.submit();
 });
 
