@@ -5,6 +5,3 @@
     <P>   ${time} </P>
     
     </div>
-</div> 
-</body>
-</html>

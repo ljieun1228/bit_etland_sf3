@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<jsp:include page="top.jsp"/>
+
 <link rel="stylesheet" href="${css}/home/main.css" />
 
 	    <div class="grid-item" id="left">
@@ -32,7 +32,7 @@
 	    <br /> <br />	
 	    </div>
 	    
-<jsp:include page="bottom.jsp"/>   
+
 <script src = "${js}/oop.js"></script> 
 <script>
 $('#emp_register').click(function(){
