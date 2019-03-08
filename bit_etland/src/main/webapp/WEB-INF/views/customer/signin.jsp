@@ -37,14 +37,14 @@
 </div>
 
 <script>
-$('#confirm_btn').click(()=>{
-	$('#form').
+$('#confirm_btn').click(function(){
+	$('#form')
 	.attr('method','POST')
 	.attr('action', '${ctx}/customer/signin')
 	.submit();
 });
 
-$('#cancel_btn').click(()=>{
+$('#cancel_btn').click(function(){
 	alert('취소버튼클릭!!');
 	});
 </script>
