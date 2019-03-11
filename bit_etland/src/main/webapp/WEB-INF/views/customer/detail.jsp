@@ -2,8 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<jsp:include page="../home/top.jsp" />
-
 <link rel="stylesheet" href="${css}/customer/detail.css" />
 
  <div class="grid-item" id="navi_bar">
@@ -25,15 +23,15 @@
 			<table>
 				<tr>
 					<td>아이디</td>
-					<td>${cus.customerId}</td>
+					<td>${user.customerId}</td>
 				</tr>
 				<tr>
 					<td>이름</td>
-					<td>${cus.customerName}</td>
+					<td>${user.customerName}</td>
 				</tr>
 				<tr>
 					<td>생년월일</td>
-					<td>${cus.ssn}</td>
+					<td>${user.ssn}</td>
 				</tr>
 				<tr>
 					<td>성별</td>
@@ -41,23 +39,19 @@
 				</tr>
 				<tr>
 					<td>전화번호</td>
-					<td>${cus.phone}</td>
+					<td>${user.phone}</td>
 				</tr>
 				<tr>
 					<td>주소</td>
-					<td>${cus.city}</td>
+					<td>${user.city}</td>
 				</tr>
 				<tr>
 					<td>상세주소</td>
-					<td>${cus.address}</td>
+					<td>${user.address}</td>
 				</tr>
 				<tr>
 					<td>우편번호</td>
-					<td>${cus.postalCode}</td>
-				</tr>
-				<tr>
-					<td>비밀번호</td>
-					<td>${cus.customerPw}</td>
+					<td>${user.postalCode}</td>
 				</tr>
 			</table>
 			<br />
@@ -71,16 +65,16 @@
 	</div>
 
 <script>
-	$('#update_btn').click(()=> {
-		location.assign('${ctx}/customer.do?cmd=cust_retrieve&page=update&customerId=${cus.customerId}');
+	$('#update_btn').click(function(){
+		location.assign('${ctx}/move/customer/update');
 			});
 	
-	$('#delete_btn').click(()=> {
+	$('#delete_btn').click(function(){
 		alert('회원 탈퇴 되었습니다.');
 		location.assign('${ctx}/customer.do?cmd=cust_delete&page=main&customerId=${cus.customerId}');
 			});
 	
-	$('#file_upload_btn').click(()=> {
+	$('#file_upload_btn').click(function(){
 		alert('사진업로드 버튼 클릭!');
 				$('#form')
 				.attr('method', 'post')
@@ -90,4 +84,3 @@
 			})
 </script>
 
-<jsp:include page="../home/bottom.jsp" />

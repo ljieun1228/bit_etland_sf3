@@ -2,8 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<jsp:include page="../home/top.jsp" />
-
 <link rel="stylesheet" href="${css}/customer/detail.css" />
 
 <div class="grid-item" id="navi_bar">
@@ -26,20 +24,19 @@
 			주 소 :<br /> 상세 주소 :<br /> 우편 번호 :<br /> 임시비밀번호 :<br />
 		</div>
 		<div class="mypage2">
-			${cus.customerId} <br /> 
-			${cus.customerName} <br /> 
-			${cus.ssn} <br />
+	     	${user.customerId} <br /> 
+			${user.customerName} <br /> 
+			${user.ssn} <br />
 			남 <br /> 
-			<input type="text" name="phone" placeholder="${cus.phone}"></input> <br /> 
-			<input type="text" name="city" placeholder="${cus.city}"></input> <br /> 
-			<input type="text" name="address" placeholder="${cus.address}"></input> <br />
-			<input type="text" name="postal_code" placeholder="${cus.postalCode}"></input> <br />
-			<input type="text" name="password" placeholder="변경 할 비밀번호"></input> <br />
+			<input type="text" name="phone" value="${user.phone}"></input> <br /> 
+			<input type="text" name="city" value="${user.city}"></input> <br /> 
+			<input type="text" name="address" value="${user.address}"></input> <br />
+			<input type="text" name="postalCode" value="${user.postalCode}"></input> <br />
+			<input type="text" name="customerPw" value="변경 할 비밀번호"></input> <br />
+			<input type="hidden" name="customerId" value="${user.customerId}"/></input>
+			<input type="hidden" name="ssn" value="${user.ssn}"/></input>
+			<input type="hidden" name="customerName" value="${user.customerName}"/></input>
 			
-			<input type="hidden" name="id" value="${cus.customerId}"/></input>
-			
- 			<input type="hidden" name="cmd" value="cust_update"/>
-			<input type="hidden" name="page" value="detail"/>	 
 			
 		</div>
 	</div>
@@ -51,16 +48,15 @@
 </form>
 </div>
 <script>
-$('#confirm_btn').click(()=>{
-	var form = $('#form');
-	form.attr('action','${ctx}/customer.do');
-	form.attr('method','post');
-	form.submit();
+$('#confirm_btn').click(function(){
+	$('#form')
+	.attr('method','POST')
+	.attr('action', '${ctx}/customer/update')
+	.submit();
 });
 
-$('#confirm_btn').click(()=>{
+$('#confirm_btn').click(function(){
 	alert('확인!');
 	});
 
 </script>
-<jsp:include page="../home/bottom.jsp" />

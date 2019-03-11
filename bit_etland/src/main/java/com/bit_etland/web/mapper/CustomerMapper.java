@@ -4,13 +4,13 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import com.bit_etland.web.domain.CustomerDTO;
 import com.bit_etland.web.proxy.Proxy;
 
-@Component
+@Repository 
 public interface CustomerMapper {
-
 
 	public void insertCustomer(CustomerDTO cus);
 	
@@ -21,7 +21,6 @@ public interface CustomerMapper {
 	public Map<String, Object> selectProfile(Proxy pxy);
 
 	public int countCustomer(Proxy pxy);
-	public boolean existsCustomerID(CustomerDTO cus);
 	
 	public void updateCustomer(CustomerDTO cus);
 	
