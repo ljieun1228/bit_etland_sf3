@@ -31,8 +31,9 @@ public class HomeController {
 		session.setAttribute("vendor", ctx + "/resources/vendor/");
 		session.setAttribute("time",new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
 
-		return "public:home/main.tiles";
+		return "public:home/main_content.tiles";
 	}
+	
 	@RequestMapping("/move/{dir}/{page}")
 	// {}변수로 처리
 	public String move(

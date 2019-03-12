@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
-<jsp:include page="../home/top.jsp"/>
 <link rel="stylesheet" href="${css}/employee/access.css" />
 
 <div class="grid-item" id="content_1">
@@ -21,7 +20,6 @@
 	</div>
 </form>
 </div>
-<jsp:include page="../home/bottom.jsp"/>
 <script>
 $('#confirm_btn').click(()=>{
 	var empno = $('#empno').val();

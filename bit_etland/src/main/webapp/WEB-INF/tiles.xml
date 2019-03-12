@@ -3,26 +3,35 @@
        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
+
+<!--  ==================      접속, 로그인 페이지        ============================  -->
   <definition name="public" template="/WEB-INF/views/layouts/common.jsp">
   	<put-attribute name="common" value="/WEB-INF/views/layouts/common.jsp" />
-    <put-attribute name="top" value="/WEB-INF/views/home/top.jsp" />
-    <put-attribute name="nav" value="" />
-    <put-attribute name="content" value="" />
-    <put-attribute name="bottom" value="/WEB-INF/views/home/bottom.jsp" />
-  </definition>
-  <definition name="public:*/*.tiles" extends="public" >
-    <put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp" />
+    <put-attribute name="top" value="/WEB-INF/views/tiles/top.jsp" />
+    <put-attribute name="content" value=""  />
+    <put-attribute name="bottom" value="/WEB-INF/views/tiles/bottom.jsp" />
   </definition>
   
-    <definition name="intro" template="/WEB-INF/views/layouts/intro.jsp">
-  	<put-attribute name="common" value="/WEB-INF/views/layouts/common.jsp" />
-    <put-attribute name="top" value="/WEB-INF/views/home/top.jsp" />
-    <put-attribute name="nav" value="" />
-    <put-attribute name="content" value="" />
-    <put-attribute name="bottom" value="/WEB-INF/views/home/bottom.jsp" />
+  <!--<put-attribute name="content" value="/WEB-INF/views/content/home/main_content.jsp" /> -->
+  <definition name="public:*/*.tiles" extends="public" >
+    <put-attribute name="content" value="/WEB-INF/views/content/{1}/{2}.jsp" />
   </definition>
-  <definition name="intro:*/*.tiles" extends="intro" >
-    <put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp" />
+
+<!--  ==================       고객 디테일 페이지            ============================  -->
+    <definition name="customer" template="/WEB-INF/views/layouts/customer_layout.jsp">
+  	<put-attribute name="common" value="/WEB-INF/views/layouts/customer_layout.jsp" />
+	<put-attribute name="top" value=""  />
+	<put-attribute name="content" value=""  />
+	<put-attribute name="nav" value=""  />
+	<put-attribute name="bottom" value=""  />
+	
   </definition>
+    
+  <!-- WEB-INF\views\content\customer\detail.jsp -->
+  <definition name="customer:*/*.tiles" extends="customer" >
+    <put-attribute name="content" value="/WEB-INF/views/content/{1}/{2}.jsp" />
+  </definition>
+  
+  
   
 </tiles-definitions>

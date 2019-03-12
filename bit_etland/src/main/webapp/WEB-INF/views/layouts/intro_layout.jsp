@@ -21,6 +21,7 @@
 	<div id="wrapper" class="grid-container container-fluid">
 		<table style="width: 100%;">
 			<tiles:insertAttribute name="top" />
+			<tiles:insertAttribute name="nav" />
 			<tiles:insertAttribute name="content" />
 			<tiles:insertAttribute name="bottom" />
 		</table>

@@ -32,7 +32,7 @@ public class CustomerController {
 		customer = customerService.retrieveCustomer(param); 
 		System.out.println("로그인 후 customer 정보 :"+customer.toString());
 		if(customer!=null)session.addAttribute("user",customer);
-		return (customer!=null)? "public:customer/detail.tiles" : "public:home/main.tiles" ;
+		return (customer!=null)? "customer:customer/detail.tiles" : "public:home/main.tiles" ;
 	}
 	
 	@RequestMapping(value="/detail")
@@ -43,7 +43,7 @@ public class CustomerController {
 		customer.setCustomerId(customerId);
 		customer = customerService.retrieveCustomer(customer);
 		model.addAttribute("customer", customer);
-		return "public:customer/detail.tiles";
+		return "customer:customer/detail.tiles";
 	}
 
 	

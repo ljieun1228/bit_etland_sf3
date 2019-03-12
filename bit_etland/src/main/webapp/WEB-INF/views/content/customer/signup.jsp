@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<jsp:include page="../home/top.jsp"/>
 <link rel="stylesheet" href="${css}/customer/signup.css" />
 <div class="grid-item" id="content_1">
  	<h1>회원가입</h1>
@@ -57,7 +56,6 @@
   </div>
 </form>
 </div>
-<jsp:include page="../home/bottom.jsp"/>
 <script>
 $('#confirm_btn').click(()=>{
 	var cusId = $('#cusId').val();

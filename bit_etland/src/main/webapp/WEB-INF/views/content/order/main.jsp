@@ -1,10 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="../home/top.jsp"%>
 <body>
 	<table id="wrapper">
 		<tr>
-			<td colspan="2"><%@ include file="../home/top.jsp"%>
 			</td>
 		</tr>
 		<tr>
@@ -21,7 +19,6 @@
 			</td>
 		</tr>
 		<tr style="height: 100px">
-			<td colspan="2"><%@ include file="../home/bottom.jsp"%>
 			</td>
 		</tr>
 	</table>

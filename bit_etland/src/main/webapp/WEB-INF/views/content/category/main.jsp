@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	
-<jsp:include page="../home/top.jsp" />
 
 <link rel="stylesheet" href="${css}/employee/navi_bar.css" />  
 <nav class="navbar navbar-default navbar-static-top">
@@ -51,7 +50,6 @@
   </div>
 </div>
 
-<jsp:include page="../home/bottom.jsp" />
 <script>
 $('#nav7').click(()=>{
 	alert('마이페이지 클릭!!');
