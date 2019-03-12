@@ -144,6 +144,8 @@
             <p class="position">Developer</p>
           </figcaption>
         </figure>
+        
+
 
         <div class="social-links">
           <p>Where else?</p>
