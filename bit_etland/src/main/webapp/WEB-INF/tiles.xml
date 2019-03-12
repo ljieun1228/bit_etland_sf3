@@ -24,13 +24,20 @@
 	<put-attribute name="content" value=""  />
 	<put-attribute name="nav" value=""  />
 	<put-attribute name="bottom" value=""  />
-	
-  </definition>
+   </definition>
     
   <!-- WEB-INF\views\content\customer\detail.jsp -->
   <definition name="customer:*/*.tiles" extends="customer" >
     <put-attribute name="content" value="/WEB-INF/views/content/{1}/{2}.jsp" />
   </definition>
  
+ <!--  ==================     no tiles          ============================  -->
+    <definition name="no_tiles" template="/WEB-INF/views/layouts/no_template.jsp">
+  	<put-attribute name="no_template" value="" />
+  </definition>
+   
+  <definition name="*.jsp" extends="no_tiles" >
+    <put-attribute name="no_template" value="/WEB-INF/views/{1}.jsp" />
+  </definition>
+ 
 </tiles-definitions>
-<!-- aa -->
