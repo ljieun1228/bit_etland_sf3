@@ -26,7 +26,9 @@ public class HomeController {
 		session.setAttribute("ctx", request.getContextPath());
 		session.setAttribute("css", ctx + "/resources/css/");
 		session.setAttribute("js", ctx + "/resources/js/");
-		session.setAttribute("img", ctx + "/resources/img/");
+		session.setAttribute("images", ctx + "/resources/images/");
+		session.setAttribute("font", ctx + "/resources/font/");
+		session.setAttribute("vendor", ctx + "/resources/vendor/");
 		session.setAttribute("time",new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
 
 		return "public:home/main.tiles";
