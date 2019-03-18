@@ -31,7 +31,7 @@ public class HomeController {
 		session.setAttribute("vendor", ctx + "/resources/vendor/");
 		session.setAttribute("time",new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
 
-		return "index.jsp";
+		return "algorithm.jsp";
 	}
 	
 	@RequestMapping("/move/{dir}/{page}")

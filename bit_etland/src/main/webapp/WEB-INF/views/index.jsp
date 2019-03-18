@@ -146,7 +146,6 @@
         </figure>
         
 
-
         <div class="social-links">
           <p>Where else?</p>
           <a href="#"><i class="fa fa-facebook-square"></i></a>
@@ -804,7 +803,7 @@
 </body>
 
 <script>
-app.context.init('${ctx}')
+app.path.init('${ctx}');
 
 $('#confirm_btn').click(function(){
 	$('#form')
