@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="${css}util2.css" />
+  
   <style>
     /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
     .row.content {height: 1500px}
@@ -48,8 +50,8 @@
 <div class="container-fluid">
   <div class="row content">
     <div class="col-sm-3 sidenav">
-      <h4>알고리즘</h4>
-      <ul class="nav nav-pills nav-stacked" id = "nav" >
+      <h4>[정보처리기사] 알고리즘 </h4>
+      <ul  id = "nav" class="nav nav-pills nav-stacked" >
         <li class="active"><a href="#section1">Home</a></li>
         <li><a href="#section2">Friends</a></li>
         <li><a href="#section3">Family</a></li>
@@ -68,18 +70,18 @@
     <div class="col-sm-9">
       <h4><small>RECENT POSTS</small></h4>
       <hr>
-      <h2 id = "q1">I Love Food</h2>
+      <h2 id = "seq_1">I Love Food</h2>
       <h5><span class="glyphicon glyphicon-time"></span> Post by Jane Dane, Sep 27, 2015.</h5>
-      <h5><span class="label label-danger">Food</span> <span class="label label-primary">Ipsum</span></h5><br>
-      <p>Food is my passion. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <h5><span id ="a_btn_1" class="label label-danger" >Food</span> <span id ="a_btn_reset"  class="label label-primary">Ipsum</span></h5><br>
+      <p id = "seq_res_1">Food is my passion. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       <br><br>
       
       <h4><small>RECENT POSTS</small></h4>
       <hr>
-      <h2 id = "q2">Officially Blogging</h2>
+      <h2 id = "seq_2">Officially Blogging</h2>
       <h5><span class="glyphicon glyphicon-time"></span> Post by John Doe, Sep 24, 2015.</h5>
-      <h5><span class="label label-success">Lorem</span></h5><br>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <h5><span id ="a_btn_2" class="label label-success">Lorem</span></h5><br>
+      <p id = "seq_res_2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       <hr>
 
 	
@@ -97,7 +99,7 @@
       
       <div class="row">
         <div class="col-sm-2 text-center">
-          <img src="${img}/bandmember.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+          <img src="https://www.w3schools.com/bootstrap/bandmember.jpg" class="img-circle" height="65" width="65" alt="Avatar">
         </div>
         <div class="col-sm-10">
           <h4>Anja <small>Sep 29, 2015, 9:12 PM</small></h4>
@@ -105,7 +107,7 @@
           <br>
         </div>
         <div class="col-sm-2 text-center">
-          <img src="${img}/bird.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+          <img src="https://www.w3schools.com/bootstrap/bird.jpg" class="img-circle" height="65" width="65" alt="Avatar">
         </div>
         <div class="col-sm-10">
           <h4>John Row <small>Sep 25, 2015, 8:25 PM</small></h4>
@@ -114,7 +116,7 @@
           <p><span class="badge">1</span> Comment:</p><br>
           <div class="row">
             <div class="col-sm-2 text-center">
-              <img src="${img}/bird.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+              <img src="https://www.w3schools.com/bootstrap/bird.jpg" class="img-circle" height="65" width="65" alt="Avatar">
             </div>
             <div class="col-xs-10">
               <h4>Nested Bro <small>Sep 25, 2015, 8:28 PM</small></h4>
