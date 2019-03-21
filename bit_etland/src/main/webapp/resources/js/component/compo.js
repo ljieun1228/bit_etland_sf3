@@ -11,7 +11,7 @@ compo= {
 			return $('<li href = "#" id =' + x.id + '/>');
 		},
 		h : x =>{
-			return $('<h3 id =' +x.id+ '/>');
+			return $('<h'+x.num+' id='+x.id+'/>');
 		},
 		form : x =>{
 			return $('<form/>');
