@@ -71,23 +71,21 @@
       
       <h4><small>RECENT POSTS</small></h4>
       <hr>
-      <h2 id = "quest">I Love Food</h2>
+      <h2 >I Love Food</h2>
       <h5><span class="glyphicon glyphicon-time"></span> Post by Jane Dane, Sep 27, 2015.</h5>
-      <h5 class = "buttons"><span id ="a_btn_1" class="label label-danger" >Food</span> 
-      <span id ="a_btn_reset"  class="label label-primary">Ipsum</span></h5><br>
-      <p id = "seq_res_1">Food is my passion. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <h5><span id ="a_btn_1" class="label label-danger" >Food</span> 
+      <span class="label label-primary">Ipsum</span></h5><br>
+      <p >Food is my passion. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       <br><br>  
       
-      <h4 id="rm_start"><small>RECENT POSTS</small></h4>
+      <h4 id="rm_start" ><small>RECENT POSTS</small></h4>
       <hr>
       <h2 id = "seq_2" >Officially Blogging</h2>
       <h5><span class="glyphicon glyphicon-time"></span> Post by John Doe, Sep 24, 2015.</h5>
       <h5><span id ="a_btn_2" class="label label-success">Lorem</span></h5><br>
-      <p  id = "seq_res_2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <p  id = "seq_res2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       <hr id="rm_end">
      
-  
-
       <h4 id="leave_a_comment">Leave a Comment:</h4>
       <form role="form">
         <div class="form-group">
@@ -124,20 +122,18 @@
               <h4>Nested Bro <small>Sep 25, 2015, 8:28 PM</small></h4>
               <p>Me too! WOW!</p>
               <br>
-            </div>
+              </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-</div>
 
 <footer class="container-fluid">
   <p>Footer Text</p>
 </footer>
 <script src="${js}algorithm/algorithm.js"></script>
-<script src="${js}algorithm/sequence.js"></script>
 
 <script>
 algo.init('${ctx}');

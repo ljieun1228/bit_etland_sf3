@@ -5,7 +5,7 @@ compo= {
 			return $('<div id ='+ x.id +'/>'); 
 		},
 		a : x => {
-			return $('<a href ="' + x.url +  '" id ='+x.id+'/a>');
+			return $('<a href ="' + x.url +  '" id ='+x.id+' />');
 		},
 		li : x => {
 			return $('<li href = "#" id =' + x.id + '/>');

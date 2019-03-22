@@ -12,9 +12,14 @@ algo =(()=>{
 	let setContentView=()=>{
 		$.when(
 			$.getScript($.js()+'/component/compo.js'),
-			$.getScript($.js()+'/algorithm/sequence.js')
+			$.getScript($.js()+'/algorithm/sequence.js'),
+			$.getScript($.js()+'/algorithm/math.js')
 		).done(()=>{	
-			sequence();
+				sequence();
+			
+				$('#math').click(function(){
+					math();
+					});
 		}// 콜백엔드
 		);
 	};

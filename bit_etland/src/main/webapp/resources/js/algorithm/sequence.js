@@ -1,10 +1,9 @@
 function sequence(){
 	_sequence.navi();
 	_sequence.remove();
-	_sequence.quest('등차');
 		
 	$('#right_content').prepend(compo.div({id:'right_start'}));
-	$('#leave_a_comment').before('<div id="right_end"/>');
+	$('#leave_a_comment').before('<div id="right_end"/>');//일회용
 	$('#right_start').nextUntil('#right_end').wrapAll('<div id="new_div"></div>');
 	
 	let str =$('#new_div').html();
@@ -13,62 +12,144 @@ function sequence(){
 	$('#new_div').remove();
 	
 	let arr=[
-		{qn :'a', res:'등차수열', out:'공차'},
-		{qn :'b', res:'등비수열', out:'공비' },
-		{qn :'c', res:'피보나치수열' },
-		{qn :'d', res:'팩토리얼' }];
+		{id :'ari', val:'등차수열'},
+		{id :'geo', val:'등비수열'},
+		{id :'fibo', val:'피보나치수열'},
+		{id :'fac', val:'팩토리얼'},
+		{id :'swit', val:'교행자연수수열'}
+		];
 	
-	$.each(arr, (index, item)=>{
-		$('#right_start').append(str);
-		$('#quest').attr('id','quest_'+item.qn);
-		$('#quest_'+item.qn).text(item.res);
-		$('.buttons').empty();
+	$.each(arr,(index,item)=>{
+		let GID = Math.floor(Math.random() * 10000) + 1;
+		let _GID = '#'+GID;
+		$('<div id="'+GID+'">'+str+'</div>')
+			.appendTo('#right_start');
 		
-		$('<span class="label label-info"></span>')
+		let POST = GID+"_POST";
+		let _POST = '#'+POST; 
+		$(_GID+' h4').attr('id',POST);
+		
+		let TITLE = GID+"_TITLE";
+		let _TITLE = '#'+TITLE;
+		$(_GID+' h2').attr('id',TITLE);
+		
+		let DATE = GID+'_DATE';
+		let _DATE = '#'+DATE;
+		$(_TITLE).siblings('h5').eq(0).attr('id',DATE);
+		
+		let BTN = GID+'_BTN';
+		let _BTN = '#'+BTN;
+		$(_TITLE).siblings('h5').eq(1).attr('id',BTN);
+		
+		let INPUT = GID+'_INPUT';
+		let _INPUT = '#'+INPUT;
+		$(_GID+' p').attr('id',INPUT);
+		
+		$(_TITLE).text(item.val);
+		$(_BTN).empty();
+		$(_INPUT).empty();
+		
+		/*{id :'ari', val:'등차수열'},
+		{id :'geo', val:'등비수열'},
+		{id :'fibo', val:'피보나치수열'},
+		{id :'fac', val:'팩토리얼'},
+		{id :'swit', val:'교행자연수수열'}
+		*/
+		let x = []; 
+	
+		switch(arr,(item.id)){
+		case 'ari' : 
+			x = [{cls: 'start', txt: '시작값'},
+				 {cls: 'end', txt: '한계값'},
+				 {cls: 'diff', txt: '공차'} ];
+			break;
+		case 'geo' :
+			x = [{cls: 'start', txt: '시작값'},
+				 {cls: 'end', txt: '한계값'},
+				 {cls: 'diff', txt: '공비'} ];
+			break;
+		/*	
+		case 'fibo' :
+			x = [{cls: 'start', txt: '시작값'},
+				 {cls: 'end', txt: '한계값'},
+				 {cls: 'diff', txt: '공차'}
+				  ];
+			break;
+		case 'fac' :
+			x = [{cls: 'start', txt: '시작값'},
+				 {cls: 'end', txt: '한계값'},
+				 {cls: 'diff', txt: '공차'}
+				];
+			break;
+		case 'swit' :
+			x = [{cls: 'start', txt: '시작값'},
+				 {cls: 'end', txt: '한계값'},
+				 {cls: 'diff', txt: '공차'}
+				];
+			break;	
+		*/
+		}
+		
+		$(_sequence.inputform(x)).appendTo(_INPUT);
+		$('#del_start').remove();
+		$('#del_end').remove();
+		
+		$('<span class="label label-primary"></span>')
 		.text('결과')
 		.addClass('cursor')
-		.appendTo('.buttons')
-		.click(()=>{
-			let data = {start: $('#start').val(),
-						end: $('#end').val(),
-						diff: $('#diff').val()};
+		.attr('name',item.id)
+		.appendTo(_BTN)
+		.click(function(){
+			let that = $(this).attr('name');
 			
-			alert(' 결과 클릭됨'+$('#start').val());
+			let data = {start: $(_INPUT+' input.start').val(),
+						end: $(_INPUT+' input.end').val(),
+						diff: $(_INPUT+' input.diff').val()};	
 			
-			$.ajax({
-				url: $.ctx()+'/algo/seq/1',
-				type:'post',
-				data:JSON.stringify({start:$('#start').val(), end:$('#end').val(), diff:$('#diff').val()}),
-				dataType:'json',
-				contentType : "application/json; charset=utf-8",
-				success:d=>{
-					$('#seq_res_1').html(compo.h({id: 'h_res', num : '2'}).text( '결과값 : '+d.result));},
-				error:a=>{alert('AJAX 실패');}
-			});	
-
+		$.ajax({
+			url: $.ctx()+'/algo/seq/'+that,
+			type: 'post',
+			data: JSON.stringify(data),
+			dataType: 'json',
+			contentType:'application/json',
+			//=============ajax==================>> JAVA로~
+			success: d =>{
+				$(_INPUT).empty();
+				$('<h2>결과값: '+d.result+'</h2>')
+				.appendTo(_INPUT);
+				},
+			error: e => {
+				alert('AJAX 실패');
+				}
+			});
 		});
 		
+		/*
+		 * 리셋 버튼 시작 	
+		 * */
 		$('<span class="label label-warning" style="margin-left: 5px"></span>')
 		.text('리셋')
 		.addClass('cursor')
-		.appendTo('.buttons')
+		.appendTo(_BTN)
 		.click(()=>{
-			_sequence.inputform();
+			$(_INPUT).empty();
+			$(_sequence.inputform(x))
+				.appendTo(_INPUT);	
 		});
-		
-		//alert("index"+index+"item.qn"+ item.qn+"item.res"+item.res);
 	});
 }
 
 var _sequence = {
-	
-	inputform:()=>{
-		$('#seq_res_1').html(compo.label({label:'start'}).text('시작 : '))
-		$('#seq_res_1').append(compo.input({id:'start', name:'start', type:'text'}))
-		$('#seq_res_1').append(compo.label({label:'end'}).text('종료 : '))
-		$('#seq_res_1').append(compo.input({id:'end', name:'end', type:'text'}))
-		$('#seq_res_1').append(compo.label({label:'diff'}).text('공차 : '))
-		$('#seq_res_1').append(compo.input({id:'diff', name:'diff', type:'text'}))
+		
+	inputform:(x)=>{
+		let html = '<form>';
+		$.each(x, (i, j)=>{
+			html += '<div class="form-group">';
+			html += '<label for="">'+j.txt+' :</label><br>';
+			html += '<input type="text" class="'+j.cls+'"></div>';
+		});	
+		html += '</form>';
+		return html;
 	},
 	
 	remove:()=>{
@@ -86,14 +167,5 @@ var _sequence = {
 		$('#nav').children().eq(4).append(compo.a({id:'app', url:'#'}).text('5. 실무 응용 알고리즘'))
 		$('#nav').append(compo.li({id:''}))
 		$('#nav').children().eq(5).append(compo.a({id:'soft', url:'#'}).text('6. 알고리즘과 소프트웨어 개발'))
-	},
-	
-	quest:(x)=>{
-		$('#quest').text(x)
-		_sequence.inputform(x);
-		
-		$('#a_btn_reset').text('리셋').addClass('cursor').click(()=>{
-			_sequence.inputform();
-		});
 	}
-}
+ };
