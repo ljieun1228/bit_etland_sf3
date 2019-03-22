@@ -21,6 +21,7 @@ function sequence(){
 	
 	$.each(arr,(index,item)=>{
 		let GID = Math.floor(Math.random() * 10000) + 1;
+		
 		let _GID = '#'+GID;
 		$('<div id="'+GID+'">'+str+'</div>')
 			.appendTo('#right_start');
@@ -68,7 +69,6 @@ function sequence(){
 				 {cls: 'end', txt: '한계값'},
 				 {cls: 'diff', txt: '공비'} ];
 			break;
-		/*	
 		case 'fibo' :
 			x = [{cls: 'start', txt: '시작값'},
 				 {cls: 'end', txt: '한계값'},
@@ -87,7 +87,7 @@ function sequence(){
 				 {cls: 'diff', txt: '공차'}
 				];
 			break;	
-		*/
+		
 		}
 		
 		$(_sequence.inputform(x)).appendTo(_INPUT);
